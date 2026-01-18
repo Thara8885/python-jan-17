@@ -14,6 +14,6 @@ spec:
      spec:
        containers:
          - name: python-web-container
-           image: 321209673437.dkr.ecr.us-east-1.amazonaws.com
+           image: 321209673437.dkr.ecr.us-east-1.amazonaws.com/python-app:v1
            ports:
              - containerPort: 5000
