@@ -37,5 +37,14 @@ pipeline {
                 '''
             }
         }
+
+        stage("Deploy to Kubernetes") {
+            steps {
+                sh '''
+                sed -i "s|IMAGE_TAG|$IMAGE_TAG|g" k8s/deployment.yaml
+                kubectl apply -f k8s/
+                '''
+            }
+        }
     }
 }
