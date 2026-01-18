@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-web-app
+spec:
+   replicas: 3
+   selector:
+     matchLabels:
+       app: python-web
+   template:
+     metadata:
+       labels:
+         app: python-web
+     spec:
+       containers:
+         - name: python-web-container
+           image: 321209673437.dkr.ecr.us-east-1.amazonaws.com
+           ports:
+             - containerPort: 5000
